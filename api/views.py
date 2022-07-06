@@ -9,3 +9,4 @@ from .models import Trail
 class TrailView(generics.ListAPIView):
     queryset = Trail.objects.all()
     serializer_class = TrailSerializer
+
