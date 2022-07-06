@@ -6,6 +6,6 @@ from .models import Trail
 
 # Create your views here.
 
-class TrailView(generics.CreateAPIView):
+class TrailView(generics.ListAPIView):
     queryset = Trail.objects.all()
     serializer_class = TrailSerializer
