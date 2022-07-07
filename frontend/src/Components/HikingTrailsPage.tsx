@@ -1,5 +1,5 @@
 import TrailsCard from './TrailsCard'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { trailsData } from '../TrailsData'
 
 export interface TrailsType {
@@ -15,6 +15,14 @@ export interface TrailsType {
 }
 
 const HikingTrailsPage = () => {
+  useEffect(() => {
+    async function getData() {
+      const res = await fetch('http://127.0.0.1:8000/api/trails')
+      console.log(res.json())
+    }
+    getData()
+  }, [])
+
   return (
     <>
       <div>
