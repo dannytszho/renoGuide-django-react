@@ -1,4 +1,6 @@
 import Nevada from '../Images/Nevada.png'
+import { LongButton } from './Button'
+import HikerIcon from '../svg/HikerIcon'
 const HomePage = () => {
   return (
     <>
@@ -7,8 +9,26 @@ const HomePage = () => {
         <div className="flex justify-center mt-20">
           <img src={Nevada} alt="navada" />
         </div>
-        <h2 className="text-black">haha</h2>
+        <h2 className="flex justify-center font-iceland text-2xl m-2">
+          · Reno · Lake Tahoe ·
+        </h2>
       </div>
+      {/* Food and Drinks section */}
+      <section className="grid gap-4 justify-center m-10 font-iceland">
+        <p className="flex justify-center text-2xl m-2 whitespace-pre">
+          ↓{'   '}Food & Drinks{'   '}↓
+        </p>
+      </section>
+      <LongButton>
+        <a href="/hikingtrails">
+          <div className="flex">
+            <div className="pl-4">
+              <HikerIcon />
+            </div>
+            <a className="text-2xl mx-auto">Hiking</a>
+          </div>
+        </a>
+      </LongButton>
     </>
   )
 }
