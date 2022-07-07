@@ -8,4 +8,6 @@ class Trail(models.Model):
     duration = models.DurationField()
     difficulty = models.CharField(max_length=50, default="")
     rating = models.DecimalField(null=False, decimal_places=1, max_digits=4)
+    url = models.URLField(max_length=200)
+    imageUrl = models.URLField(max_length=500)
     created_at = models.DateTimeField(auto_now_add=True)

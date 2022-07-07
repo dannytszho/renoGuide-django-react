@@ -4,4 +4,4 @@ from .models import Trail
 class TrailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trail
-        fields = ('id', 'trail', 'length', 'elevation', 'duration', 'difficulty', 'rating', 'created_at' )
+        fields = ['id', 'trail', 'length', 'elevation', 'duration', 'difficulty', 'rating', 'url', 'imageUrl', 'created_at' ]
