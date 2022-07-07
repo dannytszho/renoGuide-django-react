@@ -1,4 +1,5 @@
+import TrailsCard from './TrailsCard'
 const HikingTrailsPage = () => {
-  return <h2>Hiking</h2>
+  return <TrailsCard />
 }
 export default HikingTrailsPage
