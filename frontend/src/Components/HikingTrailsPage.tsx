@@ -15,11 +15,13 @@ export interface TrailsType {
 }
 
 const HikingTrailsPage = () => {
+  const [trailsdata, setTrailsdata] = useState<any[]>([])
+
   useEffect(() => {
     async function getData() {
       const res = await fetch('http://127.0.0.1:8000/api/trails')
       const data = await res.json()
-      console.log(data)
+      setTrailsdata(data)
     }
     getData()
   }, [])
@@ -27,16 +29,16 @@ const HikingTrailsPage = () => {
   return (
     <>
       <div>
-        {trailsData.map(trail => (
+        {trailsdata.map(tra => (
           <TrailsCard
-            name={trail.name}
-            length={trail.length}
-            elevation={trail.elevation}
-            image={trail.imageUrl}
-            difficulty={trail.difficulty}
-            // rating={<Rating rating={parseFloat(trail.rating)} />}
-            duration={trail.duration}
-            urL={trail.url}
+            name={tra.trail}
+            length={tra.length}
+            elevation={tra.elevation}
+            image={tra.imageUrl}
+            difficulty={tra.difficulty}
+            // rating={<Rating rating={parseFloat(tra.rating)} />}
+            duration={tra.duration}
+            urL={tra.url}
           />
         ))}
       </div>
