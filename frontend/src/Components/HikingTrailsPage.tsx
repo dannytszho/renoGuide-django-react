@@ -18,7 +18,8 @@ const HikingTrailsPage = () => {
   useEffect(() => {
     async function getData() {
       const res = await fetch('http://127.0.0.1:8000/api/trails')
-      console.log(res.json())
+      const data = await res.json()
+      console.log(data)
     }
     getData()
   }, [])
