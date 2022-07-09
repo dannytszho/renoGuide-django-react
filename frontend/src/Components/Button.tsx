@@ -24,7 +24,7 @@ export const CollapseButton = ({
   return (
     <div className="collapse collapse-arrow w-[350px] md:w-[650px] border bg-zinc-200 rounded-lg hover:scale-[102%]">
       <input type="checkbox" />
-      <div className="collapse-title text-xl font-medium">
+      <div className="collapse-title text-xl font-small">
         <h2>{children}</h2>
       </div>
       <div className="collapse-content">

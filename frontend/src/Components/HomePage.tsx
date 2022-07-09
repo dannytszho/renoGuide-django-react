@@ -3,6 +3,7 @@ import Nevada from '../Images/Nevada.png'
 import { LongButton, CollapseButton } from './Button'
 import HikerIcon from '../svg/HikerIcon'
 import KayakIcon from '../svg/KayakIcon'
+import DowntownIcon from '../svg/DowntownIcon'
 import Footer from './Footer'
 import RestaurantCard from './RestaurantCard'
 import RestaurantData from '../RestaurantData'
@@ -74,6 +75,20 @@ const HomePage = () => {
                   <KayakIcon />
                 </div>
                 <h2 className="text-2xl mx-auto">Whitewater Rafting</h2>
+              </div>
+            </a>
+          </LongButton>
+          <LongButton>
+            <a
+              href="https://downtownreno.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="flex">
+                <div className="pl-4">
+                  <DowntownIcon />
+                </div>
+                <h2 className="text-2xl mx-auto">Reno Downtown</h2>
               </div>
             </a>
           </LongButton>
