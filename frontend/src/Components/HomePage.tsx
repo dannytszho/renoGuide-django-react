@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import Nevada from '../Images/Nevada.png'
-import { LongButton } from './Button'
+import { LongButton, CollapseButton } from './Button'
 import HikerIcon from '../svg/HikerIcon'
 import Footer from './Footer'
+import RestaurantCard from './RestaurantCard'
+import RestaurantData from '../RestaurantData'
 
 const HomePage = () => {
   return (
@@ -20,6 +22,36 @@ const HomePage = () => {
           <p className="flex justify-center text-2xl m-2 whitespace-pre">
             ↓{'   '}Food & Drinks{'   '}↓
           </p>
+
+          {RestaurantData.map(place => (
+            <CollapseButton
+              key={place.name}
+              details={
+                <RestaurantCard
+                  pic={place.pic}
+                  address={place.address}
+                  addressUrl={place.addressUrl}
+                  phone={place.phone}
+                  phoneDisplay={place.phoneDisplay}
+                  hypeLink={place.hypeLink}
+                  hypeLinkDisplay={place.hypeLinkDisplay}
+                />
+              }
+            >
+              <div className="flex">
+                {place.icon}
+                <h2 className="text-2xl mx-auto">{place.name}</h2>
+              </div>
+            </CollapseButton>
+          ))}
+        </section>
+        {/* Activities section */}
+
+        <section className="grid gap-4 justify-center m-10 font-iceland">
+          <p className="flex justify-center text-2xl whitespace-pre">
+            ↓{'   '}Activities{'   '}↓
+          </p>
+
           <LongButton>
             <Link to="/hikingtrails">
               <div className="flex">

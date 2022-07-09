@@ -13,3 +13,23 @@ export const SquareButton = ({ children }: { children: React.ReactNode }) => {
     </button>
   )
 }
+
+export const CollapseButton = ({
+  children,
+  details,
+}: {
+  children: React.ReactNode
+  details: any
+}) => {
+  return (
+    <div className="collapse collapse-arrow w-[350px] md:w-[650px] border bg-zinc-200 rounded-lg hover:scale-[102%]">
+      <input type="checkbox" />
+      <div className="collapse-title text-xl font-medium">
+        <h2>{children}</h2>
+      </div>
+      <div className="collapse-content">
+        <p>{details}</p>
+      </div>
+    </div>
+  )
+}
