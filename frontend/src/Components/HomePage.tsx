@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Nevada from '../Images/Nevada.png'
 import { LongButton, CollapseButton } from './Button'
 import HikerIcon from '../svg/HikerIcon'
+import KayakIcon from '../svg/KayakIcon'
 import Footer from './Footer'
 import RestaurantCard from './RestaurantCard'
 import RestaurantData from '../RestaurantData'
@@ -61,6 +62,20 @@ const HomePage = () => {
                 <a className="text-2xl mx-auto">Hiking</a>
               </div>
             </Link>
+          </LongButton>
+          <LongButton>
+            <a
+              href="http://www.raftingreno.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div className="flex">
+                <div className="pl-4">
+                  <KayakIcon />
+                </div>
+                <h2 className="text-2xl mx-auto">Whitewater Rafting</h2>
+              </div>
+            </a>
           </LongButton>
         </section>
       </div>
