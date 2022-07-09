@@ -17,7 +17,7 @@ export interface TrailsType {
 const HikingTrailsPage = () => {
   const [trailsdata, setTrailsdata] = useState<any[]>([])
   const [showList, setShowList] = useState<any[]>(trailsdata)
-  console.log(showList)
+  console.log(trailsdata)
 
   const filterTrails = (level: any) => {
     const trail = trailsdata.filter(cur => {
@@ -26,19 +26,20 @@ const HikingTrailsPage = () => {
     setShowList(trail)
   }
 
+  async function getData() {
+    const res = await fetch('http://127.0.0.1:8000/api/trails')
+    const data = await res.json()
+    console.log(data)
+    setTrailsdata(data)
+  }
+
   useEffect(() => {
-    async function getData() {
-      const res = await fetch('http://127.0.0.1:8000/api/trails')
-      const data = await res.json()
-      console.log(data)
-      setTrailsdata(data)
-    }
     getData()
   }, [])
 
   return (
     <>
-      <div>
+      <div className="flex flex-col">
         {/* Filter section */}
 
         <div className="mt-10 flex justify-center text-black space-x-4">
@@ -68,19 +69,21 @@ const HikingTrailsPage = () => {
           </button>
         </div>
 
-        {showList.map(trail => (
-          <TrailsCard
-            key={trail.name}
-            name={trail.name}
-            length={trail.length}
-            elevation={trail.elevation}
-            image={trail.imageUrl}
-            difficulty={trail.difficulty}
-            // rating={<Rating rating={parseFloat(trail.rating)} />}
-            duration={trail.duration}
-            urL={trail.url}
-          />
-        ))}
+        <div className="grid justify-center">
+          {showList.map(trail => (
+            <TrailsCard
+              key={trail.name}
+              name={trail.name}
+              length={trail.length}
+              elevation={trail.elevation}
+              image={trail.imageUrl}
+              difficulty={trail.difficulty}
+              // rating={<Rating rating={parseFloat(trail.rating)} />}
+              duration={trail.duration}
+              urL={trail.url}
+            />
+          ))}
+        </div>
       </div>
     </>
   )

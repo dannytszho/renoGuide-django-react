@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
 import Nevada from '../Images/Nevada.png'
 import { LongButton } from './Button'
 import HikerIcon from '../svg/HikerIcon'
+
 const HomePage = () => {
   return (
     <>
@@ -18,14 +20,14 @@ const HomePage = () => {
             ↓{'   '}Food & Drinks{'   '}↓
           </p>
           <LongButton>
-            <a href="/hikingtrails">
+            <Link to="/hikingtrails">
               <div className="flex">
                 <div className="pl-4">
                   <HikerIcon />
                 </div>
                 <a className="text-2xl mx-auto">Hiking</a>
               </div>
-            </a>
+            </Link>
           </LongButton>
         </section>
       </div>
