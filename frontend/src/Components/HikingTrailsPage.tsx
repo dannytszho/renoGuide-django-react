@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { SquareButton } from './Button'
 import { trailsData } from '../TrailsData'
 import Footer from './Footer'
+import Rating from './Rating'
 import { Link } from 'react-router-dom'
 import LeftArrowIcon from '../svg/LeftArrowIcon'
 
@@ -91,7 +92,7 @@ const HikingTrailsPage = () => {
               elevation={trail.elevation}
               image={trail.imageUrl}
               difficulty={trail.difficulty}
-              // rating={<Rating rating={parseFloat(trail.rating)} />}
+              rating={<Rating rating={parseFloat(trail.rating)} />}
               duration={trail.duration}
               urL={trail.url}
             />
