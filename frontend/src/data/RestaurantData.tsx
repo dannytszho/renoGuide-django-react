@@ -1,8 +1,8 @@
-import BeerIcon from './svg/BeerIcon'
-import DiningIcon from './svg/DiningIcon'
-import Depot from './Images/TheDepot.png'
-import Louis from './Images/Louis.png'
-import Genoa from './Images/Genoa.png'
+import BeerIcon from '../svg/BeerIcon'
+import DiningIcon from '../svg/DiningIcon'
+import Depot from '../Images/TheDepot.png'
+import Louis from '../Images/Louis.png'
+import Genoa from '../Images/Genoa.png'
 
 const RestaurantData = [
   {

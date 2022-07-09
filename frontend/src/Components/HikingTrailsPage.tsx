@@ -1,7 +1,6 @@
 import TrailsCard from './TrailsCard'
 import { useEffect, useState } from 'react'
 import { SquareButton } from './Button'
-import { trailsData } from '../TrailsData'
 import Footer from './Footer'
 import Rating from './Rating'
 import { Link } from 'react-router-dom'
@@ -20,9 +19,8 @@ export interface TrailsType {
 }
 
 const HikingTrailsPage = () => {
-  const [trailsdata, setTrailsdata] = useState<any[]>([])
-  const [showList, setShowList] = useState<any[]>(trailsdata)
-  console.log(trailsdata)
+  const [trailsdata, setTrailsdata] = useState<TrailsType[]>([])
+  const [showList, setShowList] = useState<TrailsType[]>(trailsdata)
 
   const filterTrails = (level: any) => {
     const trail = trailsdata.filter(cur => {

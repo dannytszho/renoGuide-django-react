@@ -6,7 +6,7 @@ import KayakIcon from '../svg/KayakIcon'
 import DowntownIcon from '../svg/DowntownIcon'
 import Footer from './Footer'
 import RestaurantCard from './RestaurantCard'
-import RestaurantData from '../RestaurantData'
+import RestaurantData from '../data/RestaurantData'
 
 const HomePage = () => {
   return (
@@ -60,7 +60,7 @@ const HomePage = () => {
                 <div className="pl-4">
                   <HikerIcon />
                 </div>
-                <a className="text-2xl mx-auto">Hiking</a>
+                <h2 className="text-2xl mx-auto">Hiking</h2>
               </div>
             </Link>
           </LongButton>
