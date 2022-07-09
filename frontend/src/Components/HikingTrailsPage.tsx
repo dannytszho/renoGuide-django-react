@@ -16,11 +16,21 @@ export interface TrailsType {
 
 const HikingTrailsPage = () => {
   const [trailsdata, setTrailsdata] = useState<any[]>([])
+  const [showList, setShowList] = useState<any[]>(trailsdata)
+  console.log(showList)
+
+  const filterTrails = (level: any) => {
+    const trail = trailsdata.filter(cur => {
+      return cur.difficulty === level
+    })
+    setShowList(trail)
+  }
 
   useEffect(() => {
     async function getData() {
       const res = await fetch('http://127.0.0.1:8000/api/trails')
       const data = await res.json()
+      console.log(data)
       setTrailsdata(data)
     }
     getData()
@@ -29,16 +39,46 @@ const HikingTrailsPage = () => {
   return (
     <>
       <div>
-        {trailsdata.map(tra => (
+        {/* Filter section */}
+
+        <div className="mt-10 flex justify-center text-black space-x-4">
+          <button
+            onClick={() => filterTrails('Easy')}
+            className="rounded-lg px-3 py-2 bg-yellow-300"
+          >
+            Easy
+          </button>
+          <button
+            onClick={() => filterTrails('Moderate')}
+            className="rounded-lg px-3 py-2 bg-green-400"
+          >
+            Moderate
+          </button>
+          <button
+            onClick={() => filterTrails('Hard')}
+            className="rounded-lg px-4 py-2 bg-red-400"
+          >
+            Hard
+          </button>
+          <button
+            onClick={() => setShowList(trailsdata)}
+            className="rounded-lg px-4 py-2 bg-gray-200"
+          >
+            All
+          </button>
+        </div>
+
+        {showList.map(trail => (
           <TrailsCard
-            name={tra.trail}
-            length={tra.length}
-            elevation={tra.elevation}
-            image={tra.imageUrl}
-            difficulty={tra.difficulty}
-            // rating={<Rating rating={parseFloat(tra.rating)} />}
-            duration={tra.duration}
-            urL={tra.url}
+            key={trail.name}
+            name={trail.name}
+            length={trail.length}
+            elevation={trail.elevation}
+            image={trail.imageUrl}
+            difficulty={trail.difficulty}
+            // rating={<Rating rating={parseFloat(trail.rating)} />}
+            duration={trail.duration}
+            urL={trail.url}
           />
         ))}
       </div>
