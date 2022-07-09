@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Nevada from '../Images/Nevada.png'
 import { LongButton } from './Button'
 import HikerIcon from '../svg/HikerIcon'
+import Footer from './Footer'
 
 const HomePage = () => {
   return (
@@ -31,6 +32,7 @@ const HomePage = () => {
           </LongButton>
         </section>
       </div>
+      <Footer />
     </>
   )
 }

@@ -1,6 +1,7 @@
 import TrailsCard from './TrailsCard'
 import { useEffect, useState } from 'react'
 import { trailsData } from '../TrailsData'
+import Footer from './Footer'
 
 export interface TrailsType {
   id: string
@@ -85,6 +86,7 @@ const HikingTrailsPage = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </>
   )
 }
