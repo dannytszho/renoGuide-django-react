@@ -1,7 +1,10 @@
 import TrailsCard from './TrailsCard'
 import { useEffect, useState } from 'react'
+import { SquareButton } from './Button'
 import { trailsData } from '../TrailsData'
 import Footer from './Footer'
+import { Link } from 'react-router-dom'
+import LeftArrowIcon from '../svg/LeftArrowIcon'
 
 export interface TrailsType {
   id: string
@@ -41,6 +44,15 @@ const HikingTrailsPage = () => {
   return (
     <>
       <div className="flex flex-col">
+        <div className="flex m-5 justify-start">
+          <SquareButton>
+            <Link to="/">
+              <div className="p-2.5">
+                <LeftArrowIcon />
+              </div>
+            </Link>
+          </SquareButton>
+        </div>
         {/* Filter section */}
 
         <div className="mt-10 flex justify-center text-black space-x-4">
