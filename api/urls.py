@@ -1,8 +1,7 @@
 from django.urls import path
-from .views import TrailAPIView, TrailView
+from .views import TrailRetrieveUpdateDestroyView, TrailCreateView
 
 urlpatterns = [
-    path('home', TrailView.as_view()),
-    path('trails', TrailAPIView.as_view()),
-    path('trails/<int:id>', TrailAPIView.as_view())
+    path('trails/<int:id>', TrailRetrieveUpdateDestroyView.as_view()),
+    path('trails', TrailCreateView.as_view()),
 ]
