@@ -1,6 +1,13 @@
-const TrailsFilter = ({ trailsData, setShowList }: any) => {
+import { TrailsType } from './HikingTrailsPage'
+
+interface Props {
+  trailsData: TrailsType[]
+  setShowList: (param: TrailsType[]) => void
+}
+
+const TrailsFilter = ({ trailsData, setShowList }: Props) => {
   const filterTrails = (level: any) => {
-    const trail = trailsData.filter((cur: { difficulty: any }) => {
+    const trail = trailsData.filter(cur => {
       return cur.difficulty === level
     })
     setShowList(trail)
