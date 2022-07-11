@@ -6,7 +6,7 @@ interface Props {
 }
 
 const TrailsFilter = ({ trailsData, setShowList }: Props) => {
-  const filterTrails = (level: any) => {
+  const filterTrails = (level: string) => {
     const trail = trailsData.filter(cur => {
       return cur.difficulty === level
     })
