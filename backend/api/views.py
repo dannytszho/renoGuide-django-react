@@ -1,10 +1,6 @@
 
-from unicodedata import name
 from django.shortcuts import render
-from rest_framework import generics, status
-from rest_framework.views import APIView
-from rest_framework.response import Response
-
+from rest_framework import generics
 from .serializers import TrailSerializer
 from .models import Trail
 
@@ -28,8 +24,3 @@ class TrailRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
     def get_queryset(self):
         trails = Trail.objects.all()
         return trails
-
-
-
-
-    
